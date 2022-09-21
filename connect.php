@@ -2,9 +2,8 @@
 
 $Temperatura = $_GET['temp'];
 $Humedad = $_GET['hum'];
-$HumedadSuelo = $_GET['humSoil'];
 
-echo "La Temperatura es: ".$Temperatura."<br>La Humedad es: ".$Humedad."<br>La Humedad del Suelo es: ".$HumedadSuelo;
+echo "La Temperatura es: ".$Temperatura."<br>La Humedad es: ".$Humedad;
 
 $usuario = "root";
 $contrasena = "";
@@ -17,7 +16,7 @@ $db = mysqli_select_db( $conexion, $basededatos) or die ("No se ha podido selecc
 
 //$Creado_en = time();
 
-$consulta = "INSERT INTO iot_proyecto (Temperatura, Humedad, HumedadSuelo) VALUES ( ".$Temperatura.", ".$Humedad.", ".$HumedadSuelo.")";
+$consulta = "INSERT INTO iot_proyecto (Temperatura, Humedad) VALUES ( ".$Temperatura.", ".$Humedad")";
 
 $resultado = mysqli_query( $conexion, $consulta);
 
