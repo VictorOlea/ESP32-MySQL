@@ -2,19 +2,17 @@
 #include <WiFi.h>
 #include <DHT.h>  
 
-const char* ssid     = "******"; // SSID
-const char* password = "******"; // Password
-const char* host = "******";     // Server IP
-const int   port = 80;           // Server Port
-const int   watchdog = 5000;     // Watchdog frequency
+const char* ssid     = "*****"; // SSID
+const char* password = "*****";  // Password
+const char* host = "*****";   // Server IP
+const int   port = 80;                // Server Port
+const int   watchdog = 5000;          // Watchdog frequency
 unsigned long previousMillis = millis(); 
 
 #define DHTTYPE DHT11   // DHT 11
 
 #define dht_dpin 15
 DHT dht(dht_dpin, DHTTYPE); 
-
-const int humidityPIN = 33;
 
 void setup(void)
 { 
@@ -37,17 +35,13 @@ void setup(void)
 }
 void loop() {
     float h = dht.readHumidity();
-    float t = dht.readTemperature();
-    float hs = analogRead(humidityPIN);         
+    float t = dht.readTemperature();      
     Serial.print("Humedad = ");
     Serial.print(h);
     Serial.print("%  ");
     Serial.print("Temperatura = ");
     Serial.print(t); 
     Serial.print("°C  ");
-    Serial.print("Humedad Suelo =");
-    Serial.print(hs);
-    Serial.println("%  ");
 
     unsigned long currentMillis = millis();
     
@@ -64,8 +58,6 @@ void loop() {
     url += t;
     url += "&hum=";
     url += h;
-    url += "&humSoil=";
-    url += hs;
     
     // Enviamos petición al servidor
     client.print(String("GET ") + url + " HTTP/1.1\r\n" +
