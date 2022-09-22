@@ -2,9 +2,9 @@
 #include <WiFi.h>
 #include <DHT.h>  
 
-const char* ssid     = "*****"; // SSID
-const char* password = "*****";  // Password
-const char* host = "*****";   // Server IP
+const char* ssid     = "xxxxx"; // SSID
+const char* password = "xxxxx";  // Password
+const char* host = "xxx.xxx.xxx.xxx";   // Server IP
 const int   port = 80;                // Server Port
 const int   watchdog = 5000;          // Watchdog frequency
 unsigned long previousMillis = millis(); 
