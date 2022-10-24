@@ -28,7 +28,7 @@ void setup(void)
   Serial.println(WiFi.localIP());
   
   dht.begin();
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println("Humedad y Temperatura\n\n");
   delay(700);
 
