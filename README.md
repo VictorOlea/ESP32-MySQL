@@ -2,7 +2,7 @@
 
 Código que permite insertar datos desde una ESP32 a un basa de datos MySQL -> main.cpp
 
-Conexion a la base de datos MySQL -> connect.php
+Conexión a la base de datos MySQL -> connect.php
 
 Ingreso de datos del sensor de temperatura y humedad DHT11:
 
